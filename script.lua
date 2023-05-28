@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "ESP Tutorial", IntroText = "Hi!", HidePremium = false, SaveConfig = true, ConfigFolder = "Cfg"})
+local Window = OrionLib:MakeWindow({Name = "ESP Tutorial", HidePremium = false, SaveConfig = true, ConfigFolder = "Cfg"})
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
