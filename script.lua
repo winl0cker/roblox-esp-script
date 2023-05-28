@@ -1,9 +1,18 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "ESP Tutorial", HidePremium = false, SaveConfig = true, ConfigFolder = "Cfg"})
+local Window = OrionLib:MakeWindow({Name = "ESP Tutorial", IntroEnabled = false, HidePremium = false, SaveConfig = true, ConfigFolder = "Cfg"})
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
-	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local EspTab = Window:MakeTab({
+	Name = "WallHack",
+	PremiumOnly = false
+})
+
+local FunctionTab = Window:MakeTab({
+	Name = "Function",
 	PremiumOnly = false
 })
 
@@ -12,11 +21,20 @@ local Section = MainTab:AddSection({
 })
 
 MainTab:AddTextbox({
-	Name = "Hello!",
-	Default = "You are downloaded my script! Subscribe to TG: @sinisterdynasty",
+	Name = "Set WalkSpeed",
+	Default = "16",
 	TextDisappear = true,
 	Callback = function(Value)
-		print(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end	  
+})
+
+MainTab:AddTextbox({
+	Name = "Set JumpPower",
+	Default = "16",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 	end	  
 })
 
@@ -27,13 +45,7 @@ local Section = MainTab:AddSection({
 MainTab:AddToggle({
 	Name = "Chams",
 	Default = false,
-	Callback = function(Value)
-		local function ApplyESP(v) 
-  local FillColor = Color3.fromRGB(175,25,255)
-local DepthMode = "AlwaysOnTop"
-local FillTransparency = 0.5
-local OutlineColor = Color3.fromRGB(255,255,255)
-local OutlineTransparency = 0
+	Callback = local function ApplyESP(v) local FillColor = Color3.fromRGB(175,25,255) local DepthMode = "AlwaysOnTop" local FillTransparency = 0.5local OutlineColor = Color3.fromRGB(255,255,255)local OutlineTransparency = 0
 
 local CoreGui = game:FindService("CoreGui")
 local Players = game:FindService("Players")
@@ -101,14 +113,6 @@ game.Players.PlayerAdded:Connect(function(v)
        ApplyESP(v) 
    end) 
 end)
-	end    
-})
-
-MainTab:AddToggle({
-	Name = "Bigger Speed",
-	Default = false,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 200
 	end    
 })
 
