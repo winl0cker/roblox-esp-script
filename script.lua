@@ -6,16 +6,6 @@ local MainTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local EspTab = Window:MakeTab({
-	Name = "WallHack",
-	PremiumOnly = false
-})
-
-local FunctionTab = Window:MakeTab({
-	Name = "Function",
-	PremiumOnly = false
-})
-
 local Section = MainTab:AddSection({
 	Name = "Lobby"
 })
